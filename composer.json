@@ -1,0 +1,14 @@
+{
+    "name": "synetic/json-api-client",
+
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/http-foundation": "^3.3"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Synetic\\JsonApiClient\\": "src/Synetic/JsonApiClient/"
+        }
+    }
+}
