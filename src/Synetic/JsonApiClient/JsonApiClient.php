@@ -141,7 +141,7 @@ class JsonApiClient {
 
     if ($this->responseParser->responseHasErrors($response)) {
       $response->getBody()->rewind();
-      $body = json_decode($response->getBody()->getContents());
+      $body = json_decode($response->getBody()->getContents(), true);
 
       $error = array_shift($body['errors']);
 

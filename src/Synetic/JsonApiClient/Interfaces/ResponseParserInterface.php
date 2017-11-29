@@ -1,10 +1,14 @@
 <?php
 
-
 namespace Synetic\JsonApiClient\Interfaces;
 
 use GuzzleHttp\Psr7\Response;
 
+/**
+ * Interface ResponseParserInterface.
+ *
+ * @package Synetic\JsonApiClient\Interfaces
+ */
 interface ResponseParserInterface {
 
   /**
