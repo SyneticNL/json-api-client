@@ -120,6 +120,21 @@ class JsonApiClient {
   }
 
   /**
+   * Execute a delete request.
+   *
+   * @param string $uri
+   *   The uri to request.
+   * @param \Symfony\Component\HttpFoundation\ParameterBag $parameters
+   *   The parameters.
+   *
+   * @return \Psr\Http\Message\ResponseInterface
+   *   The response.
+   */
+  public function delete($uri, ParameterBag $parameters) {
+    return $this->executeRequestWithoutBody('delete', $uri, $parameters);
+  }
+
+  /**
    * Execute the request.
    *
    * @param string $method
@@ -127,7 +142,7 @@ class JsonApiClient {
    * @param string $uri
    *   The uri.
    * @param array $options
-   *   The request options
+   *   The request options.
    *
    * @return \Psr\Http\Message\ResponseInterface
    *   The response.
