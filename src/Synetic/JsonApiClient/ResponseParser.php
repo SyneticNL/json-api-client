@@ -16,7 +16,7 @@ class ResponseParser implements ResponseParserInterface {
    * {@inheritdoc}
    */
   public function responseHasErrors(Response $response) {
-    if ($response->getStatusCode() !== 200) {
+    if ($response->getStatusCode() < 200 || $response->getStatusCode() > 299) {
       return true;
     }
 
