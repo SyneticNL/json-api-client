@@ -23,7 +23,7 @@ class ResponseParser implements ResponseParserInterface {
     $response->getBody()->rewind();
     $body = json_decode($response->getBody()->getContents(), true);
 
-    if (array_key_exists('errors', $body)) {
+    if (is_array($body) && array_key_exists('errors', $body)) {
       return true;
     }
 
