@@ -17,17 +17,17 @@ class ResponseParser implements ResponseParserInterface {
    */
   public function responseHasErrors(Response $response) {
     if ($response->getStatusCode() < 200 || $response->getStatusCode() > 299) {
-      return true;
+      return TRUE;
     }
 
     $response->getBody()->rewind();
-    $body = json_decode($response->getBody()->getContents(), true);
+    $body = json_decode($response->getBody()->getContents(), TRUE);
 
     if (is_array($body) && array_key_exists('errors', $body)) {
-      return true;
+      return TRUE;
     }
 
-    return false;
+    return FALSE;
   }
 
   /**
