@@ -3,7 +3,7 @@
 
     "require": {
         "guzzlehttp/guzzle": "^6.3",
-        "symfony/http-foundation": "^3.3",
+        "symfony/http-foundation": "^3.4",
         "doctrine/instantiator": "1.0.5"
     },
 
