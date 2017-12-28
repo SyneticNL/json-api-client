@@ -16,14 +16,14 @@ class ResponseParser implements ResponseParserInterface {
    * {@inheritdoc}
    */
   public function responseHasErrors(Response $response) {
-    if ($response->getStatusCode() !== 200) {
+    if ($response->getStatusCode() < 200 || $response->getStatusCode() > 299) {
       return true;
     }
 
     $response->getBody()->rewind();
     $body = json_decode($response->getBody()->getContents(), true);
 
-    if (array_key_exists('errors', $body)) {
+    if (is_array($body) && array_key_exists('errors', $body)) {
       return true;
     }
 
